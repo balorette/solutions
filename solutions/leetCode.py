@@ -32,3 +32,16 @@ class Solution:
             spt += 1
         return neededRooms
 
+    def reverse(self, x: int) -> int:
+        if x.bit_length() > 32:
+            return 0
+        if x > 0:
+            x = int(str(x)[::-1])
+        else:
+            x = int(str(x * -1)[::-1]) * -1
+        
+        if x.bit_length() > 31:
+            return 0
+        else:
+            return x
+
